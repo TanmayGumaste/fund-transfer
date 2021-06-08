@@ -10,7 +10,6 @@ import com.apps.fundtransfer.users.model.FundException;
 import com.apps.fundtransfer.users.model.LoginRequestModel;
 import com.apps.fundtransfer.users.model.LoginResponseModel;
 import com.apps.fundtransfer.users.model.TransferBalanceRequest;
-import com.apps.fundtransfer.users.shared.UserDto;
 
 @Service
 @Component

@@ -2,8 +2,6 @@ package com.apps.fundtransfer.users.service;
 
 import java.util.UUID;
 
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +21,6 @@ import com.apps.fundtransfer.users.model.FundException;
 import com.apps.fundtransfer.users.model.LoginRequestModel;
 import com.apps.fundtransfer.users.model.LoginResponseModel;
 import com.apps.fundtransfer.users.model.TransferBalanceRequest;
-import com.apps.fundtransfer.users.shared.UserDto;
 
 @Service
 
@@ -55,7 +52,6 @@ public class FundServiceImpl implements FundService {
 		userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(userDetails.getPassword()));
 		BeanUtils.copyProperties(userDetails, userEntity);
 		userEntity=fundRepository.save(userEntity);
-		//BeanUtils.copyProperties(userEntity, userDetails);
 		logger.info("FundServiceImpl : createUser : End");
 		return userEntity;
 	}

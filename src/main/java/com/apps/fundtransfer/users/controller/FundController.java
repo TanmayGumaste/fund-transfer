@@ -24,7 +24,6 @@ import com.apps.fundtransfer.users.model.LoginResponseModel;
 import com.apps.fundtransfer.users.model.Response;
 import com.apps.fundtransfer.users.model.TransferBalanceRequest;
 import com.apps.fundtransfer.users.service.FundService;
-import com.apps.fundtransfer.users.shared.UserDto;
 
 @RestController
 @RequestMapping("/funds")

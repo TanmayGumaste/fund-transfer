@@ -107,7 +107,21 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
+
 				</executions>
+				<configuration>
+					<excludes>
+						<exclude>
+							com/apps/fundtransfer/users/model/*
+						</exclude>
+						<exclude>
+							com/apps/fundtransfer/users/data/*
+						</exclude>
+						<exclude>
+							com/apps/fundtransfer/users/shared/*
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -121,7 +135,10 @@
 				<sonar.host.url>
 					http://localhost:9000
 				</sonar.host.url>
+				<sonar.exclusions>src/main/java/com/apps/fundtransfer/users/model/*,src/main/java/com/apps/fundtransfer/users/data/*,src/main/java/com/apps/fundtransfer/users/shared/*</sonar.exclusions>
+				<sonar.core.codeCoveragePlugin>cobertura</sonar.core.codeCoveragePlugin>
 			</properties>
+
 		</profile>
 	</profiles>
 </project>

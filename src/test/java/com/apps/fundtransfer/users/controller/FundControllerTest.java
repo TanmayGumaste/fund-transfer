@@ -1,5 +1,6 @@
 package com.apps.fundtransfer.users.controller;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -90,6 +91,19 @@ public class FundControllerTest {
 		verify(fundService).createUser(userdetails);
 		assertNotNull(result);
 		assertEquals("abc", result.getBody().getFirstName());
+
+	}
+    @Test
+    @DisplayName("Sign Up Function: Negative Scenario")
+	public void createUserTestNegative() {
+		// given or context
+		// when(userService.saveUserDetails(userRequestDto)).thenReturn(true);
+    	UserEntity userEntityn=new UserEntity();
+		when(fundService.createUser(userdetails)).thenReturn(userEntityn);
+		//doNothing().when(fundService).login(loginRequestModel);
+		ResponseEntity<CreateResponseModel> result = fundController.createUser(userdetails);
+		verify(fundService).createUser(userdetails);
+		assertNull(result.getBody().getEmail());
 
 	}
 	@Test
